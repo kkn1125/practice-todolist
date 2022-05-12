@@ -1,9 +1,9 @@
 #env/usr/bin sh
 
-npm run build && cd build/
-
 echo -e "커밋 메세지 입력: \n"
 read MSG
+
+npm run build && cd build/
 
 git init
 git add -A
