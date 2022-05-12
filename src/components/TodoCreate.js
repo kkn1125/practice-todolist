@@ -85,17 +85,17 @@ function TodoCreate() {
     const nextId = useTodoNextId();
 
     const onToggle = () => setOpen(!open);
-    const onChange = e => setValue(e.target.value);
-    const onSubmit = e => {
+    const onChange = (e) => setValue(e.target.value);
+    const onSubmit = (e) => {
         e.preventDefault(); // 새로고침 방지
         dispatch({
             type: 'CREATE',
             todo: {
                 id: nextId.current,
                 text: value,
-                done: false
-            }
-        })
+                done: false,
+            },
+        });
         setValue('');
         setOpen(false);
         nextId.current += 1;

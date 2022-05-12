@@ -1,0 +1,14 @@
+#env/usr/bin sh
+
+npm run build && cd build/
+
+read MSG
+
+git init
+git add -A
+git commit -m "gh-pages update at $(date)"
+git push -f "https://github.com/kkn1125/practice-todolist/" master:gh-pages
+
+cd -
+
+git add -A && git commit -m "$MSG $(date)" && git push origin main
