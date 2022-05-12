@@ -2,11 +2,12 @@
 
 npm run build && cd build/
 
+echo -e "커밋 메세지 입력: \n"
 read MSG
 
 git init
 git add -A
-git commit -m "gh-pages update at $(date)"
+git commit -m "gh-pages update \"$MSG\" at $(date)"
 git push -f "https://github.com/kkn1125/practice-todolist/" master:gh-pages
 
 cd -
